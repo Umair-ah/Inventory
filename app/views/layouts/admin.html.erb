@@ -13,7 +13,7 @@
   <body>
     <main class="flex w-full">
       <nav class="flex">
-        <div class="w-64 p-4 h-screen bg-gray-600 dticky top-0">
+        <div class="w-64 p-4 h-screen bg-gray-600 sticky top-0">
           <div class="flex">
             <%= image_tag 'logo.png', class:'w-10'%>
             <h1 class="text-md py-2 text-gray-50 font-bold hidden md:block">eComm Admin</h1>
@@ -63,7 +63,7 @@
             </li>
 
              <li>
-              <%= link_to admin_path, class:"block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+              <%= link_to admin_orders_path, class:"block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
                 <div class="flex gap-2">
 
                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">

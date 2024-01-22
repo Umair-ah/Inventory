@@ -1,0 +1,10 @@
+<h1>Editing order</h1>
+
+<%= render "form", admin_order: @admin_order %>
+
+<br>
+
+<div>
+  <%= link_to "Show this order", [:admin, @admin_order] %> |
+  <%= link_to "Back to orders", admin_orders_path %>
+</div>
