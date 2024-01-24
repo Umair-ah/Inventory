@@ -19,4 +19,14 @@
     <%= order.address %>
   </p>
 
+  
+  <% if order.order_products.any? %>
+    <% order.order_products.each do |op| %>
+      <%= op.product.name %>
+      <%= op.size %>
+      <%= op.quantity %>
+    <% end %>
+  <% end %>
+  
+
 </div>
