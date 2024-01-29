@@ -20,7 +20,7 @@ export default class extends Controller {
       }, Qty:${item.quantity}`;
       const deleteBtn = document.createElement("button");
       deleteBtn.innerText = "Remove";
-      deleteBtn.value = item.id;
+      deleteBtn.value = JSON.stringify({ id: item.id, size: item.size });
       deleteBtn.classList.add(
         "bg-red-500",
         "rounded",
@@ -45,8 +45,11 @@ export default class extends Controller {
 
   removeFromCart(e) {
     const cart = JSON.parse(localStorage.getItem("cart"));
-    const id = e.target.value;
-    const index = cart.findIndex((item) => item.id === id);
+    const values = JSON.parse(e.target.value);
+    const { id, size } = values;
+    const index = cart.findIndex(
+      (item) => item.id === id && item.size === size
+    );
     cart.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
     window.location.reload();
